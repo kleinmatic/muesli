@@ -38,7 +38,8 @@ def run_gui() -> int:
                                    QMenu, QMessageBox, QPushButton,
                                    QSystemTrayIcon, QVBoxLayout, QWidget)
 
-    SOCKET = f"muesli-{os.getuid()}"
+    # The self-test uses its own name so it can run beside a live instance.
+    SOCKET = f"muesli-{os.getuid()}" + ("-selftest" if os.environ.get("MUESLI_SELFTEST") else "")
 
     def dot_icon(color: str, ring: str | None = None) -> QIcon:
         pm = QPixmap(64, 64)
