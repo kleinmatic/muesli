@@ -9,11 +9,11 @@ transcription and notes happen elsewhere (MacWhisper on a Mac, then Granola).
 1. Start **Muesli** from the app menu (or run `muesli`). It sits in the system tray.
 2. Click the tray icon, or press **Record**, before the call. The icon turns red
    and the window shows a timer and two live meters: **Me** and **Them**.
-3. Press **Stop** when the call ends. Muesli merges the two sides into one file
+3. Click the red dot, or press **Stop**, when the call ends. Muesli merges the two sides into one file
    and notifies you when it's ready.
 
-A click on the tray icon can start a recording but never stops one; stopping
-takes the Stop button.
+Clicking the tray icon toggles: the grey dot starts a recording, the red dot
+stops it.
 
 Recordings go to `~/Meetings/<date_time>[-name]/`:
 

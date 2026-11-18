@@ -186,14 +186,11 @@ def run_gui() -> int:
         def on_tray(self, reason):
             if reason != QSystemTrayIcon.Trigger:
                 return
-            # A click starts a recording, but never stops one: stopping takes
-            # the Stop button, so a stray click can't end an important call.
-            if not self.rec.recording and not self.busy:
-                self.toggle()
-            if self.isVisible() and self.rec.recording is False and self.busy is False:
-                self.hide()
+            # A click on the dot toggles: grey starts a recording, red stops it.
+            if self.busy:
+                self.present()       # still saving or merging: just show progress
             else:
-                self.present()
+                self.toggle()
 
         def notify(self, title: str, text: str, bad: bool = False):
             self.note.setText(text)
