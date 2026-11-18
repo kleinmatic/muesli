@@ -62,9 +62,12 @@ Muesli shows a desktop notification, and brings its window forward, when:
 ## Install
 
 Debian 13: `sudo apt install python3-pyside6.qtwidgets python3-pyside6.qtnetwork ffmpeg pulseaudio-utils`,
-then `./install.sh` (add `--autostart` to start at login, `--uninstall` to remove).
+then `./install.sh` (add `--autostart` to start at login as just the tray dot,
+`--uninstall` to remove).
 
 ## Other ways to run it
+
+- `muesli --hidden`: start in the tray without opening the window.
 
 - `muesli --headless [--seconds N] [name]`: record from a terminal, with a level
   line per second. Ctrl+C stops and merges.

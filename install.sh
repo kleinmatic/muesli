@@ -1,7 +1,7 @@
 #!/bin/sh
 # Install muesli for the current user: a launcher on PATH and an app menu entry.
 #   ./install.sh              install
-#   ./install.sh --autostart  also start muesli at login
+#   ./install.sh --autostart  also start muesli at login, as just the tray dot
 #   ./install.sh --uninstall  remove everything this script installed
 # Needs (Debian): python3-pyside6.qtwidgets python3-pyside6.qtnetwork
 #                 ffmpeg pulseaudio-utils (pactl, parecord)
@@ -41,7 +41,7 @@ StartupNotify=false
 DESK
 if [ "${1:-}" = "--autostart" ]; then
   mkdir -p "$(dirname "$AUTOSTART")"
-  cp "$DESKTOP" "$AUTOSTART"
+  sed 's|^Exec=.*|& --hidden|' "$DESKTOP" > "$AUTOSTART"
   echo "muesli will start at login."
 fi
 echo "Installed. Start it from the app menu, or run: muesli"

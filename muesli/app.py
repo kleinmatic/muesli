@@ -18,18 +18,20 @@ def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(prog="muesli", description="Record both sides of a call.")
     ap.add_argument("--headless", action="store_true", help="record from the terminal, no GUI")
     ap.add_argument("--seconds", type=float, help="with --headless: stop after this long")
+    ap.add_argument("--hidden", action="store_true",
+                    help="start in the system tray without opening the window")
     ap.add_argument("--version", action="version", version=f"muesli {__version__}")
     ap.add_argument("name", nargs="?", default="", help="optional name for the recording")
     args = ap.parse_args(argv)
     if args.headless:
         from .headless import run
         return run(args.seconds, args.name)
-    return run_gui()
+    return run_gui(hidden=args.hidden)
 
 
 # ----------------------------------------------------------------------------
 
-def run_gui() -> int:
+def run_gui(hidden: bool = False) -> int:
     from PySide6.QtCore import QObject, QSize, Qt, QTimer, QUrl, Signal
     from PySide6.QtGui import (QAction, QColor, QDesktopServices, QFont, QIcon,
                                QPainter, QPixmap)
@@ -409,7 +411,8 @@ def run_gui() -> int:
         from .selftest import drive
         drive(app, win)
     else:
-        win.present()
+        if not hidden or not win.has_tray:
+            win.present()
         n = win.refresh_unfinished()
         if n:
             win.notify("Muesli", f"{n} interrupted recording"
