@@ -84,3 +84,8 @@ terms of version 2 of the GNU General Public License as published by the Free
 Software Foundation. It comes with no warranty. See [LICENSE](LICENSE).
 
 muesli is not affiliated with Granola.
+
+## Credits
+
+Written by Scott Klein with Claude (Anthropic's AI model), working in Claude
+Code. Claude is credited as co-author on the commits.
