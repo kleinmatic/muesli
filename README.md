@@ -74,3 +74,13 @@ then `./install.sh` (add `--autostart` to start at login as just the tray dot,
 - `MUESLI_DIR=/some/folder`: record somewhere other than `~/Meetings`.
 - `MUESLI_SELFTEST=1 QT_QPA_PLATFORM=offscreen MUESLI_DIR=$(mktemp -d) muesli`:
   drives the real window through record, stop and merge, and exits 0 on success.
+
+## License
+
+Copyright (C) 2026 Scott Klein.
+
+muesli is free software: you can redistribute it and/or modify it under the
+terms of version 2 of the GNU General Public License as published by the Free
+Software Foundation. It comes with no warranty. See [LICENSE](LICENSE).
+
+muesli is not affiliated with Granola.

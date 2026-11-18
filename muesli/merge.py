@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: GPL-2.0-only
+# Copyright (C) 2026 Scott Klein
 """Merge me.flac + them.flac into one mono .m4a.
 
 Each track is loudness-normalized first, so your voice and theirs come out at

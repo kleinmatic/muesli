@@ -1,4 +1,6 @@
 #!/bin/sh
+# SPDX-License-Identifier: GPL-2.0-only
+# Copyright (C) 2026 Scott Klein
 # Install muesli for the current user: a launcher on PATH and an app menu entry.
 #   ./install.sh              install
 #   ./install.sh --autostart  also start muesli at login, as just the tray dot

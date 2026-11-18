@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: GPL-2.0-only
+# Copyright (C) 2026 Scott Klein
 """Record from a terminal, without the GUI: muesli --headless [--seconds N] [name]
 
 Prints a level line per second. Ctrl+C (or --seconds) stops and merges.

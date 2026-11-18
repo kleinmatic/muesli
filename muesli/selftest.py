@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: GPL-2.0-only
+# Copyright (C) 2026 Scott Klein
 """GUI self-test, run with MUESLI_SELFTEST=1 (ideally QT_QPA_PLATFORM=offscreen
 and MUESLI_DIR pointing at a scratch folder).
 

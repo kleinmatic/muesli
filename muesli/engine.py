@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: GPL-2.0-only
+# Copyright (C) 2026 Scott Klein
 """Recording engine.
 
 Each side of the call is one Track:
